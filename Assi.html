@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body bgcolor='#add8e6'>
+    <center>
+        <fieldset style="width:400px;" align='center'>
+            <h1>Student Regestration Form</h1>
+        </fieldset><br>
+    <form>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type='text' id='txt1'></td>
+            </tr>
+            <tr>
+                <td>Father's Name:</td>
+                  <td><input type='text' id='txt2'></td>
+            </tr>
+            <tr>
+                <td>Mother's Name:</td>
+                <td><input type='text' id='txt3'></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                  <td><input type="email" id='txt4'></td>
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                  <td><input type="date" id='txt5'></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                  <td><input type='radio' name='rad1' id='1' value='male'>male
+                    <input type='radio' name='rad1' id='2' value='female'>female
+                    <input type='radio' name='rad1' id='3' value='other'>other</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                  <td><input type="text" id='txt8'></td>
+            </tr>
+            <tr>
+                <td>Blood Group:</td>
+			    <td>
+                    <select name='bld'>
+                        <option id='a' value="A+">A+</option>
+                        <option id='b' value="A-">A-</option>
+                        <option id='c' value="B+">B+</option>
+                        <option id='d' value="B-">B-</option>
+                        <option id='e' value="o+">o+</option>
+                        <option id='f' value="o-">o-</option>
+                        <option id='g' value="AB+">AB+</option>
+                        <option id='h' value="AB-">AB-</option>
+			        </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                  <td><input type='radio' name='x' id='rd1' value='CSE'>CSE
+                    <input type='radio'  name='x' id='rd2' value='ECE'>ECE
+                    <input type='radio'  name='x' id='rd3' value='EEE'>EEE</td>
+            </tr>
+            <tr>
+                <td>Course:</td>
+                  <td><input type='radio' name='y' id='r1' value='C'>C
+                    <input type='radio'  name='y' id='r2' value='C++'>C++
+                    <input type='radio' name='y' id='r3' value='Python'>Python
+                </td>
+            </tr>
+            <tr>
+                <td>File:</td>
+                <td>
+                    <input type='file' name='file1' id='file12' value="choose file">
+                </td>
+            </tr>
+            <tr>
+                <td>    
+                        <input type='submit' name='btnsubmit' id='btnsubmit' value='Submit' onclick="func()">
+                        <input type='reset' value='Reset' onclick="func1()">
+                </td>
+            </tr>
+            
+        </table> 
+        </form 
+    </center>
+        
+    <script>
+        function func1(){
+            alert(localStorage.getItem('t1'))
+            alert(localStorage.getItem('t2'))
+            alert(localStorage.getItem('t3'))
+            alert(localStorage.getItem('t4'))
+            alert(localStorage.getItem('t5'))
+            alert(localStorage.getItem('t6'))
+            alert(localStorage.getItem('t7'))
+            alert(localStorage.getItem('t8'))
+            alert(localStorage.getItem('t9'))
+            alert(localStorage.getItem('t10'))
+        }
+        function func(){
+            localStorage.setItem('t1',document.getElementById('txt1').value)
+            localStorage.setItem('t2',document.getElementById('txt2').value)
+            localStorage.setItem('t3',document.getElementById('txt3').value)
+            localStorage.setItem('t4',document.getElementById('txt4').value)
+            localStorage.setItem('t5',document.getElementById('txt5').value)
+            var x;
+            if(document.getElementById('1').checked==true){
+                x=document.getElementById('1').value
+                //alert(x)
+            } 
+            else if(document.getElementById('2').checked==true){
+                x=document.getElementById('2').value
+               // alert(x)
+            }  
+            else if(document.getElementById('3').checked==true){
+                x=document.getElementById('3').value
+            }
+            else{
+                x=''
+            }
+            localStorage.setItem('t6',x)    
+            localStorage.setItem('t7',document.getElementById('txt8').value)
+            if(document.getElementById('a').selected==true){
+                x=document.getElementById('a').value
+               // alert(x)
+            } 
+            else if(document.getElementById('b').selected==true){
+                x=document.getElementById('b').value
+               // alert(x)
+            }  
+            else if(document.getElementById('c').selected==true){
+                x=document.getElementById('c').value
+            }
+            else if(document.getElementById('d').selected==true){
+                x=document.getElementById('d').value
+            }
+            else if(document.getElementById('e').selected==true){
+                x=document.getElementById('e').value
+            }
+            else if(document.getElementById('f').selected==true){
+                x=document.getElementById('f').value
+            }
+            else if(document.getElementById('g').selected==true){
+                x=document.getElementById('g').value
+            }
+            else if(document.getElementById('h').selected==true){
+                x=document.getElementById('h').value
+            }
+            else{
+                x=''
+                //alert(x)
+            }
+            localStorage.setItem('t8',x)
+            if(document.getElementById('rd1').checked==true){
+                x=document.getElementById('rd1').value
+                //alert(x)
+            } 
+            else if(document.getElementById('rd2').checked==true){
+                x=document.getElementById('rd2').value
+               // alert(x)
+            } 
+            else if(document.getElementById('rd3').checked==true){
+                x=document.getElementById('rd3').value
+            } 
+            else{
+                x=''
+                //alert(x)
+            }
+            localStorage.setItem('t9',x)
+            if(document.getElementById('r1').checked==true){
+                x=document.getElementById('r1').value
+                //alert(x)
+            } 
+            else if(document.getElementById('r2').checked==true){
+                x=document.getElementById('r2').value
+               // alert(x)
+            }  
+            else if(document.getElementById('r3').checked==true){
+                x=document.getElementById('r3').value
+            }
+            else{
+                x=''
+                //alert(x)
+            }
+            localStorage.setItem('t9',x)
+            localStorage.setItem('t10',document.getElementById('file12').value)
+        }
+        
+    </script>
+    
+</body>
+</html>
